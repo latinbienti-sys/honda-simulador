@@ -45090,7 +45090,7 @@ const Header = () => {
                 "x-component": "span",
                 "x-id": "Header_25_16",
                 "x-dynamic": "false",
-                children: "+58 424-733-9814"
+                children: "+58 4247339814"
               }, void 0, false, {
                 fileName: _jsxFileName,
                 lineNumber: 25,
@@ -45101,7 +45101,7 @@ const Header = () => {
               lineNumber: 23,
               columnNumber: 15
             }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxDEV)("a", {
-              href: "mailto:ventas@latinbienmotors.com",
+              href: "mailto:ventas1@latinbienmotors.com",
               className: "hidden md:flex items-center gap-1 hover:opacity-80 transition-opacity",
               "x-file-name": "Header",
               "x-line-number": "27",
@@ -45128,7 +45128,7 @@ const Header = () => {
                 "x-component": "span",
                 "x-id": "Header_29_16",
                 "x-dynamic": "false",
-                children: "ventas@latinbienmotors.com"
+                children: "ventas1@latinbienmotors.com"
               }, void 0, false, {
                 fileName: _jsxFileName,
                 lineNumber: 29,
@@ -52260,7 +52260,7 @@ const contactInfo = {
   country: "Venezuela",
   phone: "+58 424-733-9814",
   whatsapp: "+58 424-733-9814",
-  email: "ventas@latinbienmotors.com",
+  email: "ventas1@latinbienmotors.com",
   schedule: {
     weekdays: "Lunes a Viernes: 8:00 AM - 6:00 PM",
     saturday: "Sábado: 9:00 AM - 2:00 PM",
