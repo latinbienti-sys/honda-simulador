@@ -42605,15 +42605,30 @@ const ContactSection = () => {
     }
     setIsSubmitting(true);
 
-    // Simulate API call (will be replaced with real backend)
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
+    // Send to Web3Forms
+    try {
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: 'ea853d60-2135-4c1f-9e00-45343f6cf9a4',
+          nombre: formData.nombre,
+          telefono: formData.telefono,
+          email: formData.email,
+          modelo: formData.modelo,
+          direccion: formData.direccion,
+          mensaje: formData.mensaje,
+          subject: 'Nueva solicitud de Honda - ' + formData.nombre
+        })
+      });
+      
       toast({
         title: "¡Solicitud Enviada!",
         description: "Nos pondremos en contacto contigo muy pronto"
       });
 
-      // Reset form
       setFormData({
         nombre: '',
         telefono: '',
@@ -42622,8 +42637,14 @@ const ContactSection = () => {
         direccion: '',
         mensaje: ''
       });
-      setIsSubmitting(false);
-    }, 1500);
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Hubo un problema al enviar. Intenta de nuevo.",
+        variant: "destructive"
+      });
+    }
+    setIsSubmitting(false);
   };
   return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxDEV)("section", {
     id: "contacto",
