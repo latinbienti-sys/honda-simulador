@@ -45063,7 +45063,7 @@ const Header = () => {
             "x-id": "Header_22_12",
             "x-dynamic": "false",
             children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxDEV)("a", {
-              href: "tel:+582741234567",
+              href: "tel:+584247339814",
               className: "flex items-center gap-1 hover:opacity-80 transition-opacity",
               "x-file-name": "Header",
               "x-line-number": "23",
@@ -52258,8 +52258,8 @@ const contactInfo = {
   address: "Av Andrés Bello Local número cívico 1-28 Sector Zumba",
   city: "Mérida",
   country: "Venezuela",
-  phone: "+58 274-252-1234",
-  whatsapp: "+58 412-345-6789",
+  phone: "+58 424-733-9814",
+  whatsapp: "+58 424-733-9814",
   email: "ventas@latinbienmotors.com",
   schedule: {
     weekdays: "Lunes a Viernes: 8:00 AM - 6:00 PM",
