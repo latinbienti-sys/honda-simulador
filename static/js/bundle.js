@@ -52140,8 +52140,8 @@ const vehicleModels = [{
   name: "HONDA CITY EXL",
   fullName: "HONDA CITY L A/T EXL",
   year: 2026,
-  price: 24500,
-  image: "https://images.unsplash.com/photo-1669622387977-7577dbb1791b",
+  price: 27900,
+  image: "https://hondavenezuela.com/wp-content/uploads/2025/09/02_01216_3-4_FrontalLado_A_LX_tafeta.webp",
   features: ["Motor 1.5L i-VTEC", "Transmisión Automática CVT", "Sistema Honda SENSING", "Sunroof Panorámico", "Asientos en Cuero", "Pantalla Táctil 8'"],
   specs: {
     engine: "1.5L i-VTEC",
@@ -52154,8 +52154,8 @@ const vehicleModels = [{
   name: "HONDA HR-V LX",
   fullName: "HONDA HR-V L A/T LX",
   year: 2026,
-  price: 28900,
-  image: "https://images.unsplash.com/photo-1669622387907-3920be5dc048",
+  price: 30900,
+  image: "https://hondavenezuela.com/wp-content/uploads/2025/09/01_3_4_FRONTAL_LADO_A_EXL_TOPAZIO.webp",
   features: ["Motor 1.5L Turbo", "Transmisión Automática CVT", "Control de Crucero", "Cámara de Reversa", "Bluetooth & USB", "A/C Automático"],
   specs: {
     engine: "1.5L Turbo",
@@ -52168,8 +52168,8 @@ const vehicleModels = [{
   name: "HONDA HR-V EXL",
   fullName: "HONDA HR-V L A/T EXL",
   year: 2026,
-  price: 32500,
-  image: "https://images.unsplash.com/photo-1669622387977-7577dbb1791b",
+  price: 34200,
+  image: "https://hondavenezuela.com/wp-content/uploads/2025/09/01_3_4_FRONTAL_LADO_A_EXL_TITANIUM.webp",
   features: ["Motor 1.5L Turbo", "Transmisión Automática CVT", "Honda SENSING Elite", "Sunroof Panorámico", "Asientos en Cuero Premium", "Sistema de Audio Premium", "Llantas de Aleación 18'", "Sensores de Estacionamiento"],
   specs: {
     engine: "1.5L Turbo",
