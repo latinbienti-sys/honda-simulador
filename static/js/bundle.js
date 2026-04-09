@@ -46889,7 +46889,7 @@ const ModelsSection = () => {
             "x-id": "ModelsSection_158_12",
             "x-dynamic": "false",
             children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxDEV)("img", {
-              src: "https://images.unsplash.com/photo-1669622387907-3920be5dc048",
+              src: "https://hondavenezuela.com/wp-content/uploads/2025/09/01_3_4_FRONTAL_LADO_A_EXL_TOPAZIO.webp",
               alt: "Honda Interior",
               className: "rounded-xl shadow-2xl",
               "x-file-name": "ModelsSection",
