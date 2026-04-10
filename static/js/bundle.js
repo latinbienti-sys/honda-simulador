@@ -45243,7 +45243,7 @@ const Header = () => {
           "x-id": "Header_44_10",
           "x-dynamic": "false",
           children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxDEV)("img", {
-            src: "https://drive.google.com/uc?export=download&id=1hT5VjivP7JLRevFuF34vTHr1jPrVKzjV",
+            src: "https://hondavenezuela.com/wp-content/uploads/2026/03/logo-honda-vzla.png",
             alt: "Honda",
             className: "h-10 md:h-12 object-contain",
             "x-file-name": "Header",
