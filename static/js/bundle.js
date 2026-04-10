@@ -49321,20 +49321,6 @@ const SimulatorSection = () => {
                     columnNumber: 21
                   }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxDEV)(_components_ui_select__WEBPACK_IMPORTED_MODULE_6__.SelectContent, {
                     children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxDEV)(_components_ui_select__WEBPACK_IMPORTED_MODULE_6__.SelectItem, {
-                      value: "12",
-                      "x-file-name": "SimulatorSection",
-                      "x-line-number": "264",
-                      "x-column": "22",
-                      "x-component": "SelectItem",
-                      "x-id": "SimulatorSection_264_22",
-                      "x-dynamic": "false",
-                      "x-excluded": "true",
-                      children: "12 meses"
-                    }, void 0, false, {
-                      fileName: _jsxFileName,
-                      lineNumber: 264,
-                      columnNumber: 23
-                    }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxDEV)(_components_ui_select__WEBPACK_IMPORTED_MODULE_6__.SelectItem, {
                       value: "24",
                       "x-file-name": "SimulatorSection",
                       "x-line-number": "265",
@@ -49347,48 +49333,6 @@ const SimulatorSection = () => {
                     }, void 0, false, {
                       fileName: _jsxFileName,
                       lineNumber: 265,
-                      columnNumber: 23
-                    }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxDEV)(_components_ui_select__WEBPACK_IMPORTED_MODULE_6__.SelectItem, {
-                      value: "36",
-                      "x-file-name": "SimulatorSection",
-                      "x-line-number": "266",
-                      "x-column": "22",
-                      "x-component": "SelectItem",
-                      "x-id": "SimulatorSection_266_22",
-                      "x-dynamic": "false",
-                      "x-excluded": "true",
-                      children: "36 meses"
-                    }, void 0, false, {
-                      fileName: _jsxFileName,
-                      lineNumber: 266,
-                      columnNumber: 23
-                    }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxDEV)(_components_ui_select__WEBPACK_IMPORTED_MODULE_6__.SelectItem, {
-                      value: "48",
-                      "x-file-name": "SimulatorSection",
-                      "x-line-number": "267",
-                      "x-column": "22",
-                      "x-component": "SelectItem",
-                      "x-id": "SimulatorSection_267_22",
-                      "x-dynamic": "false",
-                      "x-excluded": "true",
-                      children: "48 meses"
-                    }, void 0, false, {
-                      fileName: _jsxFileName,
-                      lineNumber: 267,
-                      columnNumber: 23
-                    }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxDEV)(_components_ui_select__WEBPACK_IMPORTED_MODULE_6__.SelectItem, {
-                      value: "60",
-                      "x-file-name": "SimulatorSection",
-                      "x-line-number": "268",
-                      "x-column": "22",
-                      "x-component": "SelectItem",
-                      "x-id": "SimulatorSection_268_22",
-                      "x-dynamic": "false",
-                      "x-excluded": "true",
-                      children: "60 meses"
-                    }, void 0, false, {
-                      fileName: _jsxFileName,
-                      lineNumber: 268,
                       columnNumber: 23
                     }, undefined)]
                   }, void 0, true, {
