@@ -46318,7 +46318,7 @@ const ModelsSection = () => {
                 "x-dynamic": "true",
                 "x-source-type": "computed",
                 "x-source-editable": "false",
-                children: formatPrice(model.price)
+                children: formatPrice(model.totalVehiculo)
               }, void 0, false, {
                 fileName: _jsxFileName,
                 lineNumber: 76,
