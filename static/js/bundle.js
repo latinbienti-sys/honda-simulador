@@ -45276,7 +45276,7 @@ const Header = () => {
             "x-component": "div",
             "x-id": "Header_49_12",
             "x-dynamic": "false",
-            children: "LATINBIENMOTORS"
+            children: "LATINBIEN MOTORS"
           }, void 0, false, {
             fileName: _jsxFileName,
             lineNumber: 49,
@@ -50320,7 +50320,7 @@ const WhatsAppWidget = () => {
                   "x-component": "p",
                   "x-id": "WhatsAppWidget_76_20",
                   "x-dynamic": "false",
-                  children: "LATINBIENMOTORS"
+                  children: "LATINBIEN MOTORS"
                 }, void 0, false, {
                   fileName: _jsxFileName,
                   lineNumber: 76,
@@ -50404,7 +50404,7 @@ const WhatsAppWidget = () => {
                 fileName: _jsxFileName,
                 lineNumber: 94,
                 columnNumber: 22
-              }, undefined), " Bienvenido a LATINBIENMOTORS"]
+              }, undefined), " Bienvenido a LATINBIEN MOTORS"]
             }, void 0, true, {
               fileName: _jsxFileName,
               lineNumber: 93,
@@ -52276,7 +52276,7 @@ const testimonials = [{
   date: "Enero 2024"
 }];
 const contactInfo = {
-  dealerName: "LATINBIENMOTORS",
+  dealerName: "LATINBIEN MOTORS",
   address: "Av Andrés Bello Local número cívico 1-28 Sector Zumba",
   city: "Mérida",
   country: "Venezuela",
