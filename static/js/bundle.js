@@ -45242,15 +45242,16 @@ const Header = () => {
           "x-component": "div",
           "x-id": "Header_44_10",
           "x-dynamic": "false",
-          children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxDEV)("div", {
-            className: "text-2xl md:text-3xl font-bold text-[#CC0000]",
+          children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxDEV)("img", {
+            src: "https://drive.google.com/uc?export=download&id=1hT5VjivP7JLRevFuF34vTHr1jPrVKzjV",
+            alt: "Honda",
+            className: "h-10 md:h-12 object-contain",
             "x-file-name": "Header",
             "x-line-number": "45",
             "x-column": "12",
-            "x-component": "div",
+            "x-component": "img",
             "x-id": "Header_45_12",
-            "x-dynamic": "false",
-            children: "HONDA"
+            "x-dynamic": "false"
           }, void 0, false, {
             fileName: _jsxFileName,
             lineNumber: 45,
