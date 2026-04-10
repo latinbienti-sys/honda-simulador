@@ -46065,11 +46065,11 @@ const ModelsSection = () => {
     }
   };
   const formatPrice = price => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('es-VE', {
       style: 'currency',
       currency: 'USD',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
     }).format(price);
   };
   return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxDEV)("section", {
@@ -48448,7 +48448,7 @@ const SimulatorSection = () => {
     });
   };
   const formatPrice = amount => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('es-VE', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 2,
@@ -52182,7 +52182,7 @@ const vehicleModels = [{
   price: 30900,
   iva: 4944,
   igtf: 1075.35,
-  totalVehiculo: 37742.42,
+  totalVehiculo: 37742.72,
   image: "https://hondavenezuela.com/wp-content/uploads/2025/09/01_3_4_FRONTAL_LADO_A_EXL_TOPAZIO.webp",
   features: ["Motor 1.5L Turbo", "Transmisión Automática CVT", "Control de Crucero", "Cámara de Reversa", "Bluetooth & USB", "A/C Automático"],
   specs: {
