@@ -48400,11 +48400,11 @@ const SimulatorSection = () => {
       return;
     }
 
-    // Calculate vehicle total
-    const iva = precioBase * _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.IVA_RATE;
-    const igtf = precioBase * _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.IGTF_RATE;
+    // Use pre-calculated values from model
+    const iva = selectedModel.iva;
+    const igtf = selectedModel.igtf;
     const subtotalGastos = _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.TRAMITES + _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.PLACA + _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.GASTOS_ENTREGA;
-    const totalVehiculo = precioBase + iva + igtf + subtotalGastos;
+    const totalVehiculo = selectedModel.totalVehiculo;
 
     // Calculate financing
     const montoFinanciar = totalVehiculo - inicialAmount;
@@ -48927,7 +48927,7 @@ const SimulatorSection = () => {
                       "x-dynamic": "true",
                       "x-source-type": "computed",
                       "x-source-editable": "false",
-                      children: formatPrice(selectedModel.price * 0.16)
+                      children: formatPrice(selectedModel.iva)
                     }, void 0, false, {
                       fileName: _jsxFileName,
                       lineNumber: 199,
@@ -48968,7 +48968,7 @@ const SimulatorSection = () => {
                       "x-dynamic": "true",
                       "x-source-type": "computed",
                       "x-source-editable": "false",
-                      children: formatPrice(selectedModel.price * 0.03)
+                      children: formatPrice(selectedModel.igtf)
                     }, void 0, false, {
                       fileName: _jsxFileName,
                       lineNumber: 203,
@@ -49132,7 +49132,7 @@ const SimulatorSection = () => {
                       "x-dynamic": "true",
                       "x-source-type": "computed",
                       "x-source-editable": "false",
-                      children: formatPrice(selectedModel.price + selectedModel.price * 0.16 + selectedModel.price * 0.03 + _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.TRAMITES + _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.PLACA + _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.GASTOS_ENTREGA)
+                      children: formatPrice(selectedModel.totalVehiculo)
                     }, void 0, false, {
                       fileName: _jsxFileName,
                       lineNumber: 219,
@@ -52163,6 +52163,9 @@ const vehicleModels = [{
   fullName: "HONDA CITY L A/T EXL",
   year: 2026,
   price: 27900,
+  iva: 4464,
+  igtf: 970.92,
+  totalVehiculo: 34158.32,
   image: "https://hondavenezuela.com/wp-content/uploads/2025/09/02_01216_3-4_FrontalLado_A_LX_tafeta.webp",
   features: ["Motor 1.5L i-VTEC", "Transmisión Automática CVT", "Sistema Honda SENSING", "Sunroof Panorámico", "Asientos en Cuero", "Pantalla Táctil 8'"],
   specs: {
@@ -52177,6 +52180,9 @@ const vehicleModels = [{
   fullName: "HONDA HR-V L A/T LX",
   year: 2026,
   price: 30900,
+  iva: 4944,
+  igtf: 1075.35,
+  totalVehiculo: 37742.42,
   image: "https://hondavenezuela.com/wp-content/uploads/2025/09/01_3_4_FRONTAL_LADO_A_EXL_TOPAZIO.webp",
   features: ["Motor 1.5L Turbo", "Transmisión Automática CVT", "Control de Crucero", "Cámara de Reversa", "Bluetooth & USB", "A/C Automático"],
   specs: {
@@ -52191,6 +52197,9 @@ const vehicleModels = [{
   fullName: "HONDA HR-V L A/T EXL",
   year: 2026,
   price: 34200,
+  iva: 5472,
+  igtf: 1190.16,
+  totalVehiculo: 41685.56,
   image: "https://hondavenezuela.com/wp-content/uploads/2025/09/01_3_4_FRONTAL_LADO_A_EXL_TITANIUM.webp",
   features: ["Motor 1.5L Turbo", "Transmisión Automática CVT", "Honda SENSING Elite", "Sunroof Panorámico", "Asientos en Cuero Premium", "Sistema de Audio Premium", "Llantas de Aleación 18'", "Sensores de Estacionamiento"],
   specs: {
