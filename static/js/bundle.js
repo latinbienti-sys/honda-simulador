@@ -48388,6 +48388,7 @@ const SimulatorSection = () => {
     if (selectedModel) {
       const minInicial = selectedModel.totalVehiculo * 0.5;
       setInicial(minInicial.toString());
+      setPlazo("24");
       setShowResults(false);
       setCalculations({
         precioBase: 0,
