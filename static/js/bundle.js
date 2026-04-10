@@ -48386,7 +48386,7 @@ const SimulatorSection = () => {
   }, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     if (selectedModel) {
-      const minInicial = selectedModel.price * 0.5;
+      const minInicial = selectedModel.totalVehiculo * 0.5;
       setInicial(minInicial.toString());
       setShowResults(false);
       setCalculations({
@@ -49223,7 +49223,7 @@ const SimulatorSection = () => {
                     value: inicial,
                     onChange: e => setInicial(e.target.value),
                     className: "pl-8",
-                    min: selectedModel ? selectedModel.price * 0.5 : 0,
+                    min: selectedModel ? selectedModel.totalVehiculo * 0.5 : 0,
                     "x-file-name": "SimulatorSection",
                     "x-line-number": "239",
                     "x-column": "20",
@@ -49263,7 +49263,7 @@ const SimulatorSection = () => {
                     "x-dynamic": "true",
                     "x-source-type": "computed",
                     "x-source-editable": "false",
-                    children: formatPrice(selectedModel.price * 0.5)
+                    children: formatPrice(selectedModel.totalVehiculo * 0.5)
                   }, void 0, false)]
                 }, void 0, true, {
                   fileName: _jsxFileName,
