@@ -48384,6 +48384,26 @@ const SimulatorSection = () => {
       sessionStorage.removeItem('selectedModel');
     }
   }, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (selectedModel) {
+      const minInicial = selectedModel.price * 0.5;
+      setInicial(minInicial.toString());
+      setShowResults(false);
+      setCalculations({
+        precioBase: 0,
+        iva: 0,
+        igtf: 0,
+        subtotalGastos: 0,
+        totalVehiculo: 0,
+        seguroVida: 0,
+        seguroVehiculo: 0,
+        montoFinanciar: 0,
+        comisionFlat: 0,
+        totalFinanciar: 0,
+        cuotaMensual: 0
+      });
+    }
+  }, [selectedModelId]);
   const selectedModel = _data_mock__WEBPACK_IMPORTED_MODULE_10__.vehicleModels.find(m => m.id.toString() === selectedModelId);
   const calculateFinancing = () => {
     if (!selectedModel || !inicial || !plazo) {
