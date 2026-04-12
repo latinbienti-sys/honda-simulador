@@ -48428,8 +48428,8 @@ const SimulatorSection = () => {
     const totalVehiculo = selectedModel.totalVehiculo;
 
     // Calculate financing
-    const seguroVida = _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.SEGURO_VIDA_BASE * (parseInt(plazo) / 12);
-    const seguroVehiculo = _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.SEGURO_VEHICULO_BASE;
+    const seguroVida = precioBase * _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.SEGURO_VIDA_RATE * (parseInt(plazo) / 12);
+    const seguroVehiculo = precioBase * _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.SEGURO_VEHICULO_RATE;
     const baseMonto = totalVehiculo - inicialAmount;
     const montoFinanciar = baseMonto + seguroVida + seguroVehiculo;
     const comisionFlat = montoFinanciar * _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.COMISION_FLAT;
@@ -52228,8 +52228,8 @@ const calculatorConstants = {
   GASTOS_ENTREGA: 420,
   MIN_INICIAL_PERCENT: 0.50,
   COMISION_FLAT: 0.05,
-  SEGURO_VIDA_BASE: 72.8905,
-  SEGURO_VEHICULO_BASE: 1132.282,
+  SEGURO_VIDA_RATE: 0.00472,
+  SEGURO_VEHICULO_RATE: 0.0366,
   TASA_MENSUAL: 0.015
 };
 const testimonials = [{
