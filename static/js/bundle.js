@@ -42607,65 +42607,20 @@ const ContactSection = () => {
 
     // Send to Web3Forms
     try {
-      // Try Odoo first
-      try {
-        const odooUrl = 'http://173.212.220.29:8069';
-        const loginRes = await fetch(odooUrl + '/jsonrpc/2.0/common', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            jsonrpc: '2.0',
-            method: 'call',
-            params: { service: 'common', method: 'login', args: ['latinbien08_12_2025', 'latinbienti@latinbien.com', 'z+cakaSe'] },
-            id: 1
-          })
-        });
-        const loginData = await loginRes.json();
-        const uid = loginData && loginData.result;
-        
-        if (uid) {
-          await fetch(odooUrl + '/jsonrpc/2.0/object', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              jsonrpc: '2.0',
-              method: 'call',
-              params: {
-                service: 'object',
-                method: 'execute',
-                args: ['latinbien08_12_2025', uid, 'z+cakaSe', 'crm.lead', 'create', {
-                  name: 'Solicitud Honda - ' + formData.nombre,
-                  contact_name: formData.nombre,
-                  phone: formData.telefono,
-                  email_from: formData.email,
-                  description: 'Modelo: ' + formData.modelo + ', Direccion: ' + formData.direccion + ', Mensaje: ' + formData.mensaje,
-                  team_id: 1,
-                  stage_id: 1,
-                  company_id: 1
-                }]
-              },
-              id: 2
-            })
-          });
-        }
-      } catch (e) {
-        console.log('Odoo not available, using Web3Forms');
-        // Fallback to Web3Forms
-        await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            access_key: 'ea853d60-2135-4c1f-9e00-45343f6cf9a4',
-            nombre: formData.nombre,
-            telefono: formData.telefono,
-            email: formData.email,
-            modelo: formData.modelo,
-            direccion: formData.direccion,
-            mensaje: formData.mensaje,
-            subject: 'Nueva solicitud de Honda - ' + formData.nombre
-          })
-        });
-      }
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'ea853d60-2135-4c1f-9e00-45343f6cf9a4',
+          nombre: formData.nombre,
+          telefono: formData.telefono,
+          email: formData.email,
+          modelo: formData.modelo,
+          direccion: formData.direccion,
+          mensaje: formData.mensaje,
+          subject: 'Nueva solicitud de Honda - ' + formData.nombre
+        })
+      });
       
       toast({
         title: "¡Solicitud Enviada!",
