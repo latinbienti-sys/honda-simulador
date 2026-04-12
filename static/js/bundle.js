@@ -48433,7 +48433,10 @@ const SimulatorSection = () => {
     const seguroVehiculo = _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.SEGURO_VEHICULO_BASE;
     const comisionFlat = montoFinanciar * _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.COMISION_FLAT;
     const totalFinanciar = montoFinanciar + seguroVida + seguroVehiculo + comisionFlat;
-    const cuotaMensual = totalFinanciar / parseInt(plazo);
+    const tasaMensual = _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.TASA_MENSUAL;
+    const plazoNum = parseInt(plazo);
+    const factor = Math.pow(1 + tasaMensual, plazoNum);
+    const cuotaMensual = montoFinanciar * (tasaMensual * factor) / (factor - 1);
     setCalculations({
       precioBase,
       iva,
@@ -52225,7 +52228,8 @@ const calculatorConstants = {
   MIN_INICIAL_PERCENT: 0.50,
   COMISION_FLAT: 0.05,
   SEGURO_VIDA_BASE: 65.97,
-  SEGURO_VEHICULO_BASE: 1024.75
+  SEGURO_VEHICULO_BASE: 1024.75,
+  TASA_MENSUAL: 0.015
 };
 const testimonials = [{
   id: 1,
