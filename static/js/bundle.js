@@ -42647,7 +42647,8 @@ const ContactSection = () => {
               email_from: formData.email,
               description: 'Modelo: ' + formData.modelo + '\nDirección: ' + formData.direccion + '\nMensaje: ' + formData.mensaje,
               team_id: 1,
-              stage_id: 1
+              stage_id: 1,
+              company_id: 1
             }]
           },
           id: 2
