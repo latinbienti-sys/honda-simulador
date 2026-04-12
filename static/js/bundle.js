@@ -49963,6 +49963,44 @@ const SimulatorSection = () => {
                     lineNumber: 350,
                     columnNumber: 23
                   }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxDEV)(_components_ui_button__WEBPACK_IMPORTED_MODULE_2__.Button, {
+                    onClick: () => {
+                      const formatPrice = (num) => num.toLocaleString('en-US', {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                      });
+                      const content = `
+═══════════════════════════════════════════════════════════════
+                    COTIZACIÓN HONDA
+═══════════════════════════════════════════════════════════════
+
+Modelo: ${selectedModel?.fullName || ''} ${selectedModel?.year || ''}
+Precio Base: USD ${formatPrice(calculations.precioBase)}
+IVA (16%): USD ${formatPrice(calculations.iva)}
+IGTF (3%): USD ${formatPrice(calculations.igtf)}
+--------------------------------------------------
+Sub-Total Gastos: USD ${formatPrice(calculations.subtotalGastos)}
+TOTAL VEHÍCULO: USD ${formatPrice(calculations.totalVehiculo)}
+--------------------------------------------------
+Monto Inicial (50%): USD ${formatPrice(calculations.totalVehiculo * 0.5)}
+MONTO A FINANCIAR: USD ${formatPrice(calculations.montoFinanciar)}
+Seguro de Vida: USD ${formatPrice(calculations.seguroVida)}
+Seguro Vehículo: USD ${formatPrice(calculations.seguroVehiculo)}
+Comisión Flat (5%): USD ${formatPrice(calculations.comisionFlat)}
+CUOTA MENSUAL (${plazo} meses): USD ${formatPrice(calculations.cuotaMensual)}
+═══════════════════════════════════════════════════════════════
+Los valores son referenciales. La aprobación está sujeta a
+evaluación crediticia.
+                      `;
+                      const blob = new Blob([content], {
+                        type: 'text/plain'
+                      });
+                      const url = URL.createObjectURL(blob);
+                      const a = document.createElement('a');
+                      a.href = url;
+                      a.download = `Cotizacion-HONDA-${selectedModel?.name || ' Vehicle'}.txt`;
+                      a.click();
+                      URL.revokeObjectURL(url);
+                    },
                     variant: "outline",
                     className: "w-full border-gray-300",
                     "x-file-name": "SimulatorSection",
