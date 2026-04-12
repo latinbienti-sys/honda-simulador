@@ -42605,22 +42605,52 @@ const ContactSection = () => {
     }
     setIsSubmitting(true);
 
-    // Send to Web3Forms
+    // Send to Odoo CRM
     try {
-      await fetch('https://api.web3forms.com/submit', {
+      const odooUrl = 'http://173.212.220.29:8069';
+      const db = 'latinbien08_12_2025';
+      const login = 'latinbienti@latinbien.com';
+      const password = 'z+cakaSe';
+      
+      // Login to get uid
+      const loginRes = await fetch(`${odooUrl}/jsonrpc/2.0/common`, {
         method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: 'ea853d60-2135-4c1f-9e00-45343f6cf9a4',
-          nombre: formData.nombre,
-          telefono: formData.telefono,
-          email: formData.email,
-          modelo: formData.modelo,
-          direccion: formData.direccion,
-          mensaje: formData.mensaje,
-          subject: 'Nueva solicitud de Honda - ' + formData.nombre
+          jsonrpc: '2.0',
+          method: 'call',
+          params: { service: 'common', method: 'login', args: [db, login, password] },
+          id: 1
+        })
+      });
+      const loginData = await loginRes.json();
+      const uid = loginData.result;
+      
+      if (!uid) {
+        throw new Error('No se pudo conectar a Odoo');
+      }
+      
+      // Create lead in Odoo
+      await fetch(`${odooUrl}/jsonrpc/2.0/object`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          jsonrpc: '2.0',
+          method: 'call',
+          params: {
+            service: 'object',
+            method: 'execute',
+            args: [db, uid, password, 'crm.lead', 'create', {
+              name: 'Solicitud Honda - ' + formData.nombre,
+              contact_name: formData.nombre,
+              phone: formData.telefono,
+              email_from: formData.email,
+              description: 'Modelo: ' + formData.modelo + '\nDirección: ' + formData.direccion + '\nMensaje: ' + formData.mensaje,
+              team_id: 1,
+              stage_id: 1
+            }]
+          },
+          id: 2
         })
       });
       
