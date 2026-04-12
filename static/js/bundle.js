@@ -42607,7 +42607,7 @@ const ContactSection = () => {
 
     // Send to Web3Forms
     try {
-      await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -42618,9 +42618,17 @@ const ContactSection = () => {
           modelo: formData.modelo,
           direccion: formData.direccion,
           mensaje: formData.mensaje,
-          subject: 'Nueva solicitud de Honda - ' + formData.nombre
+          subject: 'Nueva solicitud de Honda - ' + formData.nombre,
+          from_name: 'Honda Simulador'
         })
       });
+      
+      const result = await response.json();
+      console.log('Web3Forms response:', result);
+      
+      if (!result.success) {
+        throw new Error(result.message || 'Error en Web3Forms');
+      }
       
       toast({
         title: "¡Solicitud Enviada!",
