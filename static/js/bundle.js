@@ -49962,44 +49962,60 @@ const SimulatorSection = () => {
                     fileName: _jsxFileName,
                     lineNumber: 350,
                     columnNumber: 23
-                  }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxDEV)(_components_ui_button__WEBPACK_IMPORTED_MODULE_2__.Button, {
+}, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxDEV)(_components_ui_button__WEBPACK_IMPORTED_MODULE_2__.Button, {
                     onClick: () => {
-                      const formatPrice = (num) => num.toLocaleString('en-US', {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2
-                      });
-                      const content = `
-═══════════════════════════════════════════════════════════════
-                    COTIZACIÓN HONDA
-═══════════════════════════════════════════════════════════════
-
-Modelo: ${selectedModel?.fullName || ''} ${selectedModel?.year || ''}
-Precio Base: USD ${formatPrice(calculations.precioBase)}
-IVA (16%): USD ${formatPrice(calculations.iva)}
-IGTF (3%): USD ${formatPrice(calculations.igtf)}
---------------------------------------------------
-Sub-Total Gastos: USD ${formatPrice(calculations.subtotalGastos)}
-TOTAL VEHÍCULO: USD ${formatPrice(calculations.totalVehiculo)}
---------------------------------------------------
-Monto Inicial (50%): USD ${formatPrice(calculations.totalVehiculo * 0.5)}
-MONTO A FINANCIAR: USD ${formatPrice(calculations.montoFinanciar)}
-Seguro de Vida: USD ${formatPrice(calculations.seguroVida)}
-Seguro Vehículo: USD ${formatPrice(calculations.seguroVehiculo)}
-Comisión Flat (5%): USD ${formatPrice(calculations.comisionFlat)}
-CUOTA MENSUAL (${plazo} meses): USD ${formatPrice(calculations.cuotaMensual)}
-═══════════════════════════════════════════════════════════════
-Los valores son referenciales. La aprobación está sujeta a
-evaluación crediticia.
-                      `;
-                      const blob = new Blob([content], {
-                        type: 'text/plain'
-                      });
-                      const url = URL.createObjectURL(blob);
-                      const a = document.createElement('a');
-                      a.href = url;
-                      a.download = `Cotizacion-HONDA-${selectedModel?.name || ' Vehicle'}.txt`;
-                      a.click();
-                      URL.revokeObjectURL(url);
+                      const formatPrice = (num) => {
+                        if (num === undefined || num === null) return '0.00';
+                        return num.toLocaleString('en-US', {
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2
+                        });
+                      };
+                      const printWindow = window.open('', '_blank');
+                      if (printWindow) {
+                        printWindow.document.write(`
+                          <!DOCTYPE html>
+                          <html>
+                          <head>
+                            <title>Cotización HONDA</title>
+                            <style>
+                              body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: 0 auto; }
+                              h1 { text-align: center; color: #CC0000; }
+                              .line { margin: 8px 0; }
+                              .bold { font-weight: bold; }
+                              .total { font-weight: bold; font-size: 18px; border-top: 2px solid #000; padding-top: 10px; }
+                              .footer { margin-top: 30px; font-size: 12px; color: #666; text-align: center; }
+                              @media print { body { padding: 0; } }
+                            </style>
+                          </head>
+                          <body>
+                            <h1>COTIZACIÓN HONDA</h1>
+                            <hr>
+                            <div class="line"><strong>Modelo:</strong> ${selectedModel?.fullName || ''} ${selectedModel?.year || ''}</div>
+                            <div class="line"><strong>Precio Base:</strong> USD ${formatPrice(calculations.precioBase)}</div>
+                            <div class="line"><strong>IVA (16%):</strong> USD ${formatPrice(calculations.iva)}</div>
+                            <div class="line"><strong>IGTF (3%):</strong> USD ${formatPrice(calculations.igtf)}</div>
+                            <hr>
+                            <div class="line"><strong>Sub-Total Gastos:</strong> USD ${formatPrice(calculations.subtotalGastos)}</div>
+                            <div class="line total"><strong>TOTAL VEHÍCULO:</strong> USD ${formatPrice(calculations.totalVehiculo)}</div>
+                            <hr>
+                            <div class="line"><strong>Monto Inicial (50%):</strong> USD ${formatPrice(calculations.totalVehiculo * 0.5)}</div>
+                            <div class="line bold"><strong>MONTO A FINANCIAR:</strong> USD ${formatPrice(calculations.montoFinanciar)}</div>
+                            <div class="line"><strong>Seguro de Vida:</strong> USD ${formatPrice(calculations.seguroVida)}</div>
+                            <div class="line"><strong>Seguro Vehículo:</strong> USD ${formatPrice(calculations.seguroVehiculo)}</div>
+                            <div class="line"><strong>Comisión Flat (5%):</strong> USD ${formatPrice(calculations.comisionFlat)}</div>
+                            <div class="line total"><strong>CUOTA MENSUAL (${plazo || 24} meses):</strong> USD ${formatPrice(calculations.cuotaMensual)}</div>
+                            <hr>
+                            <div class="footer">
+                              * Los valores son referenciales. La aprobación está sujeta a evaluación crediticia.<br>
+                              Generado desde: latinbienti-sys.github.io/honda-simulador
+                            </div>
+                          </body>
+                          </html>
+                        `);
+                        printWindow.document.close();
+                        printWindow.print();
+                      }
                     },
                     variant: "outline",
                     className: "w-full border-gray-300",
