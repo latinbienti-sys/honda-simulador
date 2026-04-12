@@ -46065,11 +46065,11 @@ const ModelsSection = () => {
     }
   };
   const formatPrice = price => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('es-VE', {
       style: 'currency',
       currency: 'USD',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
     }).format(price);
   };
   return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxDEV)("section", {
@@ -48384,6 +48384,27 @@ const SimulatorSection = () => {
       sessionStorage.removeItem('selectedModel');
     }
   }, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (selectedModel) {
+      const minInicial = selectedModel.totalVehiculo * 0.5;
+      setInicial(minInicial.toString());
+      setPlazo("24");
+      setShowResults(false);
+      setCalculations({
+        precioBase: 0,
+        iva: 0,
+        igtf: 0,
+        subtotalGastos: 0,
+        totalVehiculo: 0,
+        seguroVida: 0,
+        seguroVehiculo: 0,
+        montoFinanciar: 0,
+        comisionFlat: 0,
+        totalFinanciar: 0,
+        cuotaMensual: 0
+      });
+    }
+  }, [selectedModelId]);
   const selectedModel = _data_mock__WEBPACK_IMPORTED_MODULE_10__.vehicleModels.find(m => m.id.toString() === selectedModelId);
   const calculateFinancing = () => {
     if (!selectedModel || !inicial || !plazo) {
@@ -48448,7 +48469,7 @@ const SimulatorSection = () => {
     });
   };
   const formatPrice = amount => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('es-VE', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 2,
@@ -49203,7 +49224,7 @@ const SimulatorSection = () => {
                     value: inicial,
                     onChange: e => setInicial(e.target.value),
                     className: "pl-8",
-                    min: selectedModel ? selectedModel.price * 0.5 : 0,
+                    min: selectedModel ? selectedModel.totalVehiculo * 0.5 : 0,
                     "x-file-name": "SimulatorSection",
                     "x-line-number": "239",
                     "x-column": "20",
@@ -49243,7 +49264,7 @@ const SimulatorSection = () => {
                     "x-dynamic": "true",
                     "x-source-type": "computed",
                     "x-source-editable": "false",
-                    children: formatPrice(selectedModel.price * 0.5)
+                    children: formatPrice(selectedModel.totalVehiculo * 0.5)
                   }, void 0, false)]
                 }, void 0, true, {
                   fileName: _jsxFileName,
@@ -49300,20 +49321,6 @@ const SimulatorSection = () => {
                     columnNumber: 21
                   }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxDEV)(_components_ui_select__WEBPACK_IMPORTED_MODULE_6__.SelectContent, {
                     children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxDEV)(_components_ui_select__WEBPACK_IMPORTED_MODULE_6__.SelectItem, {
-                      value: "12",
-                      "x-file-name": "SimulatorSection",
-                      "x-line-number": "264",
-                      "x-column": "22",
-                      "x-component": "SelectItem",
-                      "x-id": "SimulatorSection_264_22",
-                      "x-dynamic": "false",
-                      "x-excluded": "true",
-                      children: "12 meses"
-                    }, void 0, false, {
-                      fileName: _jsxFileName,
-                      lineNumber: 264,
-                      columnNumber: 23
-                    }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxDEV)(_components_ui_select__WEBPACK_IMPORTED_MODULE_6__.SelectItem, {
                       value: "24",
                       "x-file-name": "SimulatorSection",
                       "x-line-number": "265",
@@ -49326,48 +49333,6 @@ const SimulatorSection = () => {
                     }, void 0, false, {
                       fileName: _jsxFileName,
                       lineNumber: 265,
-                      columnNumber: 23
-                    }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxDEV)(_components_ui_select__WEBPACK_IMPORTED_MODULE_6__.SelectItem, {
-                      value: "36",
-                      "x-file-name": "SimulatorSection",
-                      "x-line-number": "266",
-                      "x-column": "22",
-                      "x-component": "SelectItem",
-                      "x-id": "SimulatorSection_266_22",
-                      "x-dynamic": "false",
-                      "x-excluded": "true",
-                      children: "36 meses"
-                    }, void 0, false, {
-                      fileName: _jsxFileName,
-                      lineNumber: 266,
-                      columnNumber: 23
-                    }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxDEV)(_components_ui_select__WEBPACK_IMPORTED_MODULE_6__.SelectItem, {
-                      value: "48",
-                      "x-file-name": "SimulatorSection",
-                      "x-line-number": "267",
-                      "x-column": "22",
-                      "x-component": "SelectItem",
-                      "x-id": "SimulatorSection_267_22",
-                      "x-dynamic": "false",
-                      "x-excluded": "true",
-                      children: "48 meses"
-                    }, void 0, false, {
-                      fileName: _jsxFileName,
-                      lineNumber: 267,
-                      columnNumber: 23
-                    }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxDEV)(_components_ui_select__WEBPACK_IMPORTED_MODULE_6__.SelectItem, {
-                      value: "60",
-                      "x-file-name": "SimulatorSection",
-                      "x-line-number": "268",
-                      "x-column": "22",
-                      "x-component": "SelectItem",
-                      "x-id": "SimulatorSection_268_22",
-                      "x-dynamic": "false",
-                      "x-excluded": "true",
-                      children: "60 meses"
-                    }, void 0, false, {
-                      fileName: _jsxFileName,
-                      lineNumber: 268,
                       columnNumber: 23
                     }, undefined)]
                   }, void 0, true, {
@@ -52182,7 +52147,7 @@ const vehicleModels = [{
   price: 30900,
   iva: 4944,
   igtf: 1075.35,
-  totalVehiculo: 37742.42,
+  totalVehiculo: 37742.72,
   image: "https://hondavenezuela.com/wp-content/uploads/2025/09/01_3_4_FRONTAL_LADO_A_EXL_TOPAZIO.webp",
   features: ["Motor 1.5L Turbo", "Transmisión Automática CVT", "Control de Crucero", "Cámara de Reversa", "Bluetooth & USB", "A/C Automático"],
   specs: {
