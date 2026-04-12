@@ -48428,11 +48428,12 @@ const SimulatorSection = () => {
     const totalVehiculo = selectedModel.totalVehiculo;
 
     // Calculate financing
-    const montoFinanciar = totalVehiculo - inicialAmount;
     const seguroVida = _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.SEGURO_VIDA_BASE * (parseInt(plazo) / 12);
     const seguroVehiculo = _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.SEGURO_VEHICULO_BASE;
+    const baseMonto = totalVehiculo - inicialAmount;
+    const montoFinanciar = baseMonto + seguroVida + seguroVehiculo;
     const comisionFlat = montoFinanciar * _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.COMISION_FLAT;
-    const totalFinanciar = montoFinanciar + seguroVida + seguroVehiculo + comisionFlat;
+    const totalFinanciar = montoFinanciar;
     const tasaMensual = _data_mock__WEBPACK_IMPORTED_MODULE_10__.calculatorConstants.TASA_MENSUAL;
     const plazoNum = parseInt(plazo);
     const factor = Math.pow(1 + tasaMensual, plazoNum);
