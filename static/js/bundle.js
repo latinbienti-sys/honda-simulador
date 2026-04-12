@@ -42613,7 +42613,7 @@ const ContactSection = () => {
       const password = 'z+cakaSe';
       
       // Login to get uid
-      const loginRes = await fetch(`${odooUrl}/jsonrpc/2.0/common`, {
+      const loginRes = await fetch(odooUrl + '/jsonrpc/2.0/common', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -42624,14 +42624,17 @@ const ContactSection = () => {
         })
       });
       const loginData = await loginRes.json();
-      const uid = loginData.result;
+      const uid = loginData && loginData.result;
       
       if (!uid) {
-        throw new Error('No se pudo conectar a Odoo');
+        console.error('Odoo login failed:', loginData);
+        alert('Error de conexión. Intente más tarde.');
+        setIsSubmitting(false);
+        return;
       }
       
       // Create lead in Odoo
-      await fetch(`${odooUrl}/jsonrpc/2.0/object`, {
+      const createRes = await fetch(odooUrl + '/jsonrpc/2.0/object', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -42654,6 +42657,11 @@ const ContactSection = () => {
           id: 2
         })
       });
+      const createData = await createRes.json();
+      
+      if (createData && createData.error) {
+        console.error('Odoo create error:', createData.error);
+      }
       
       toast({
         title: "¡Solicitud Enviada!",
